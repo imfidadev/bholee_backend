@@ -35,6 +35,7 @@ exports.booking = async (req, res) => {
       address,
       city,
       postalCode,
+      paymentId,
     } = req.body;
 
     const options = {
@@ -49,6 +50,7 @@ exports.booking = async (req, res) => {
         address,
         city,
         postalCode,
+        paymentId,
       },
     };
 
