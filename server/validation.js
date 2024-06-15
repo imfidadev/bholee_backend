@@ -30,8 +30,14 @@ const bookingSchema = {
   postalCode: Joi.string().label("Postal Code").required(),
 };
 
+const paymentIntentSchema = {
+  currency: Joi.string().label("Currency").required(),
+  amount: Joi.number().integer().label("Amount").required(),
+};
+
 module.exports = {
   validate,
   contactUsSchema: Joi.object(contactUsSchema),
   bookingSchema: Joi.object(bookingSchema),
+  paymentIntentSchema: Joi.object(paymentIntentSchema),
 };
