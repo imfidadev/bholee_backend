@@ -27,6 +27,7 @@ exports.contactUs = async (req, res) => {
 exports.booking = async (req, res) => {
   try {
     const {
+      referralCode,
       email,
       firstName,
       lastName,
@@ -42,6 +43,7 @@ exports.booking = async (req, res) => {
       subject: "Booking",
       file_name: "booking",
       data: {
+        referralCode,
         email,
         firstName,
         lastName,
