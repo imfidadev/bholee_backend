@@ -3,14 +3,15 @@ const { apiResponse } = require("@utils");
 
 exports.contactUs = async (req, res) => {
   try {
-    const { name, phone } = req.body;
+    const { name, email, message } = req.body;
 
     const options = {
       subject: "Contact Us",
       file_name: "contact_us",
       data: {
         name,
-        phone,
+        email,
+        message: message ?? "",
       },
     };
 

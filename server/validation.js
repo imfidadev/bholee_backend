@@ -16,7 +16,8 @@ const validate = (data, schema, opts = {}) => {
 
 const contactUsSchema = {
   name: Joi.string().label("Name").required(),
-  phone: Joi.string().label("phone").required(),
+  email: Joi.string().label("email").required(),
+  message: Joi.string().allow(null, ""),
 };
 
 const bookingSchema = {
