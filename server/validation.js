@@ -16,10 +16,12 @@ const validate = (data, schema, opts = {}) => {
 
 const contactUsSchema = {
   name: Joi.string().label("Name").required(),
-  phone: Joi.string().label("phone").required(),
+  email: Joi.string().label("email").required(),
+  message: Joi.string().allow(null, ""),
 };
 
 const bookingSchema = {
+  referralCode: Joi.string().label("Referral Code").required(),
   email: Joi.string().label("Email").required(),
   firstName: Joi.string().label("First Name").required(),
   lastName: Joi.string().label("Last Name").required(),
@@ -28,10 +30,17 @@ const bookingSchema = {
   address: Joi.string().label("Address").required(),
   city: Joi.string().label("City").required(),
   postalCode: Joi.string().label("Postal Code").required(),
+  paymentId: Joi.string().label("Payment Id").required(),
+};
+
+const paymentIntentSchema = {
+  currency: Joi.string().label("Currency").required(),
+  amount: Joi.number().integer().label("Amount").required(),
 };
 
 module.exports = {
   validate,
   contactUsSchema: Joi.object(contactUsSchema),
   bookingSchema: Joi.object(bookingSchema),
+  paymentIntentSchema: Joi.object(paymentIntentSchema),
 };

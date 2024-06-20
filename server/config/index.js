@@ -26,6 +26,11 @@ const config = {
     password: process.env.MAIL_PASSWORD,
     toAddress: process.env.MAIL_TO_ADDRESS,
   },
+  stripeSecretKey: process.env.STRIPE_SECRET_KEY,
+  instagram: {
+    access_token: process.env.INSTAGRAM_ACCESS_TOKEN,
+    username: process.env.INSTAGRAM_USER_NAME,
+  },
 };
 
 module.exports = config;

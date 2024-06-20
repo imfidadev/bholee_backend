@@ -3,14 +3,15 @@ const { apiResponse } = require("@utils");
 
 exports.contactUs = async (req, res) => {
   try {
-    const { name, phone } = req.body;
+    const { name, email, message } = req.body;
 
     const options = {
       subject: "Contact Us",
       file_name: "contact_us",
       data: {
         name,
-        phone,
+        email,
+        message: message ?? "",
       },
     };
 
@@ -27,6 +28,7 @@ exports.contactUs = async (req, res) => {
 exports.booking = async (req, res) => {
   try {
     const {
+      referralCode,
       email,
       firstName,
       lastName,
@@ -35,12 +37,14 @@ exports.booking = async (req, res) => {
       address,
       city,
       postalCode,
+      paymentId,
     } = req.body;
 
     const options = {
       subject: "Booking",
       file_name: "booking",
       data: {
+        referralCode,
         email,
         firstName,
         lastName,
@@ -49,6 +53,7 @@ exports.booking = async (req, res) => {
         address,
         city,
         postalCode,
+        paymentId,
       },
     };
 

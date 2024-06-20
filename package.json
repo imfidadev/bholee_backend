@@ -32,6 +32,7 @@
     "module-alias": "^2.2.3",
     "nodemailer": "^6.9.13",
     "request": "^2.88.2",
+    "stripe": "^15.11.0",
     "winston": "^3.13.0"
   }
 }
