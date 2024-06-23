@@ -31,6 +31,7 @@ const bookingSchema = {
   city: Joi.string().label("City").required(),
   postalCode: Joi.string().label("Postal Code").required(),
   paymentId: Joi.string().label("Payment Id").required(),
+  amount: Joi.number().label("Amount").required(),
 };
 
 const paymentIntentSchema = {
