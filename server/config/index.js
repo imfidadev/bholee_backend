@@ -29,7 +29,6 @@ const config = {
   stripeSecretKey: process.env.STRIPE_SECRET_KEY,
   instagram: {
     access_token: process.env.INSTAGRAM_ACCESS_TOKEN,
-    username: process.env.INSTAGRAM_USER_NAME,
   },
 };
 
