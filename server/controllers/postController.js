@@ -12,6 +12,12 @@ exports.getInstagramPosts = async (req, res) => {
     const data = posts?.data?.data ?? [];
     return apiResponse(req, res, data, 200, `successfully`);
   } catch (err) {
-    return apiResponse(req, res, {}, 500, err.message);
+    return apiResponse(
+      req,
+      res,
+      {},
+      500,
+      err?.response?.data?.error?.message ?? err.message
+    );
   }
 };
