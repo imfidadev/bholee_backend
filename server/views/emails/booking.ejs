@@ -51,6 +51,15 @@
     <div class="container">
       <h3>New Booking</h3>
       <br>
+
+      <div>
+        <p><%= data.plan_title%></p>
+        <p><%= data.title%></p>
+        <p><%= data.type%></p>
+        <p>$<%= data.amount%></p>
+      </div>
+
+      <br>
       <p>Referral Code: <%= data.referralCode%></p>
       <p>Email: <%= data.email%></p>
       <p>First Name: <%= data.firstName%></p>
@@ -58,10 +67,10 @@
       <p>Company Name: <%= data.companyName%></p>
       <p>Phone: <%= data.phone%></p>
       <p>Address: <%= data.address%></p>
+      <p>Country: <%= data.country%></p>
       <p>City: <%= data.city%></p>
       <p>Postal Code: <%= data.postalCode%></p>
       <p>Payment Id: <%= data.paymentId%></p>
-      <p>Amount: $<%= data.amount%></p>
     </div>
   </body>
 </html>

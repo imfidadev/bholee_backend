@@ -28,10 +28,16 @@ const bookingSchema = {
   companyName: Joi.string().allow(null, ""),
   phone: Joi.string().label("phone").required(),
   address: Joi.string().label("Address").required(),
+  country: Joi.string().label("Country").required(),
   city: Joi.string().label("City").required(),
   postalCode: Joi.string().label("Postal Code").required(),
   paymentId: Joi.string().label("Payment Id").required(),
   amount: Joi.number().label("Amount").required(),
+  description: Joi.string().label("Description").allow(null, ""),
+  plan_desc: Joi.string().label("Plan Description").allow(null, ""),
+  plan_title: Joi.string().label("Plan Title").allow(null, ""),
+  title: Joi.string().label("Title").allow(null, ""),
+  type: Joi.string().label("Type").allow(null, ""),
 };
 
 const paymentIntentSchema = {
