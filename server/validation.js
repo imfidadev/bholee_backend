@@ -21,17 +21,23 @@ const contactUsSchema = {
 };
 
 const bookingSchema = {
-  referralCode: Joi.string().label("Referral Code").required(),
+  referralCode: Joi.string().label("Referral Code").allow(null, ""),
   email: Joi.string().label("Email").required(),
   firstName: Joi.string().label("First Name").required(),
   lastName: Joi.string().label("Last Name").required(),
   companyName: Joi.string().allow(null, ""),
   phone: Joi.string().label("phone").required(),
   address: Joi.string().label("Address").required(),
+  country: Joi.string().label("Country").required(),
   city: Joi.string().label("City").required(),
   postalCode: Joi.string().label("Postal Code").required(),
   paymentId: Joi.string().label("Payment Id").required(),
   amount: Joi.number().label("Amount").required(),
+  description: Joi.string().label("Description").allow(null, ""),
+  plan_desc: Joi.string().label("Plan Description").allow(null, ""),
+  plan_title: Joi.string().label("Plan Title").allow(null, ""),
+  title: Joi.string().label("Title").allow(null, ""),
+  type: Joi.string().label("Type").allow(null, ""),
 };
 
 const paymentIntentSchema = {
