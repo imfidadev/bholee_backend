@@ -21,7 +21,7 @@ const contactUsSchema = {
 };
 
 const bookingSchema = {
-  referralCode: Joi.string().label("Referral Code").required(),
+  referralCode: Joi.string().label("Referral Code").allow(null, ""),
   email: Joi.string().label("Email").required(),
   firstName: Joi.string().label("First Name").required(),
   lastName: Joi.string().label("Last Name").required(),
