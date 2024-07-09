@@ -43,6 +43,7 @@ const bookingSchema = {
 const paymentIntentSchema = {
   currency: Joi.string().label("Currency").required(),
   amount: Joi.number().integer().label("Amount").required(),
+  receipt_email: Joi.string().label("Receipt Email").required(),
 };
 
 module.exports = {
