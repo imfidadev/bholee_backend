@@ -5,13 +5,14 @@ const stripe = require("stripe")(config.stripeSecretKey);
 
 exports.createPaymentIntent = async (req, res) => {
   try {
-    const { amount, currency = "usd", receipt_email } = req.body;
+    const { amount, currency = "usd", receipt_email, metadata } = req.body;
 
     const paymentIntent = await stripe.paymentIntents.create({
       amount: parseFloat(amount),
       currency,
       automatic_payment_methods: { enabled: true },
       receipt_email,
+      metadata,
     });
 
     apiResponse(
