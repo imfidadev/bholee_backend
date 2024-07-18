@@ -20,7 +20,7 @@ const contactUsSchema = {
   message: Joi.string().allow(null, ""),
 };
 
-const bookingSchema = {
+const metadata = {
   referralCode: Joi.string().label("Referral Code").allow(null, ""),
   email: Joi.string().label("Email").required(),
   firstName: Joi.string().label("First Name").required(),
@@ -31,7 +31,6 @@ const bookingSchema = {
   country: Joi.string().label("Country").required(),
   city: Joi.string().label("City").required(),
   postalCode: Joi.string().label("Postal Code").required(),
-  paymentId: Joi.string().label("Payment Id").required(),
   amount: Joi.number().label("Amount").required(),
   description: Joi.string().label("Description").allow(null, ""),
   plan_desc: Joi.string().label("Plan Description").allow(null, ""),
@@ -40,10 +39,18 @@ const bookingSchema = {
   type: Joi.string().label("Type").allow(null, ""),
 };
 
+const bookingSchema = {
+  ...metadata,
+  paymentId: Joi.string().label("Payment Id").required(),
+};
+
 const paymentIntentSchema = {
   currency: Joi.string().label("Currency").required(),
   amount: Joi.number().integer().label("Amount").required(),
   receipt_email: Joi.string().label("Receipt Email").required(),
+  metadata: Joi.object({
+    ...metadata,
+  }),
 };
 
 module.exports = {
