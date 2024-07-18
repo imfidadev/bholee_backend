@@ -18,6 +18,6 @@ exports.getInstagramPosts = async (req, res) => {
       {},
       500,
       err?.response?.data?.error?.message ?? err.message
-    );
+    ); 
   }
 };
