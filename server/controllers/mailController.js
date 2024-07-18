@@ -8,11 +8,7 @@ exports.contactUs = async (req, res) => {
     const options = {
       subject: "Contact Us",
       file_name: "contact_us",
-      data: {
-        name,
-        email,
-        message: message ?? "",
-      },
+      data: { name, email, message: message ?? "" },
     };
 
     //send email
